@@ -1,0 +1,100 @@
+.header-bg {
+  background-image: url('../assets/handss.webp');
+  background-size: cover;
+  background-position: center;
+  height: 70vh; /* Preenche toda a altura da tela */
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.header-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; 
+}
+
+.header-menu h1 a{
+  font-family: "Cinzel decorative";
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-family: 'Raleway';
+  font-size: 1.5rem;
+  color: #dfdfff;
+  position: relative;
+}
+
+.efect:hover{
+  color: #fff;
+  transition: color .2s ease;
+}
+
+.efect::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width .3s ease;
+}
+.efect:hover::after{
+  width: 20px;
+}
+
+.cadastro{
+  padding: 10px 20px;
+  border: 1px solid #dfdfff;
+}
+
+.cadastro:hover{
+  border-color: #fff;
+}
+
+.header h2 {
+  color: white;
+  font-size: 3rem;
+  max-width: 24ch;
+  padding-top: 300px; 
+  font-family: "Cinzel decorative";
+  text-align: center;
+}
+
+.icon{
+  fill: #dfdfff;
+  transition: fill 0.3s;
+}
+
+.icon:hover{
+  fill: red;
+}
+
+@media (max-width: 800px){
+  .header h2{
+    font-size: 2.5rem;
+    max-width: 40ch;
+    padding-top: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
