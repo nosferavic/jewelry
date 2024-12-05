@@ -1,0 +1,75 @@
+.newsletter-bg {
+  background-image: url("../assets/neck.webp");
+  background-size: cover;
+  background-position: center;
+  height: 70vh; /* Preenche toda a altura da tela */
+  width: 100%;
+  position: relative;
+}
+
+.newsletter{
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter p{
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.newsletter-msg{
+  font-size: 40px;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #444;
+}
+
+.form-email{
+  display: flex;
+  align-items: center;
+}
+
+.btn-mail{
+  background-color: #fff;
+  outline: none;
+  border: 3px solid #fff;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.newsletter .area-title {
+  color: #fff;
+}
+
+@media (max-width: 900px){
+
+  .newsletter p{
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+  }
+  .newsletter-msg{
+    font-size: 20px
+  }
+
+  .btn-mail{
+    border: 1px solid #fff;
+    padding: 10px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 400px){
+  .form-email{
+    flex-direction: column;
+  }
+
+  .btn-mail{
+    width: 100%;
+  }
+}

@@ -16,11 +16,12 @@
         <ul class="nav-menu">
           <li><a class="efect" href="#produtos">Produtos</a></li>
           <li><a class="efect" href="#galeria">Galeria</a></li>
-          <li><a class="efect" href="#contato">Contato</a></li>
+          <li><a class="efect" href="#newsletter">newsletter</a></li>
           <li><a class="efect" href="./login">Login</a></li>
           <li><a class="cadastro" href="./cadastro">Cadastro</a></li>
           <li><a href="#buy"><img class="icon" src="./assets/bag.svg" width="32px" alt=""></a></li>
         </ul>
+        <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
       </nav>
     </div>
     <h2>Brilhe com exclusividade. Viva o luxo em cada detalhe.</h2>
@@ -29,8 +30,99 @@
 
   <main class="container">
 
+    <section id="produtos" class="products">
+      <h1 class="area-title">produtos</h1>
+
+      <div class="products-itens">
+        <div class="jew-product">
+          <img src="/assets/jewel1.webp" alt="Corrente Dupla em Ouro" class="product-image">
+          <strong class="product-title">Corrente Dupla em Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 12.499,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel2.webp" alt="Colar de Ouro e Pérolas" class="product-image">
+          <strong class="product-title">Colar de Ouro e Pérolas</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 19.899,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel3.webp" alt="Dupla Medalha de Ouro" class="product-image">
+          <strong class="product-title">Dupla Medalha de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 8.799,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel4.webp" alt="Corrente de Ouro" class="product-image">
+          <strong class="product-title">Corrente de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 11.349,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel5.webp" alt="Pulseira de Ouro" class="product-image">
+          <strong class="product-title">Pulseira de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 6.799,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel6.webp" alt="Corrente/Colar de Ouro" class="product-image">
+          <strong class="product-title">Corrente/Colar de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 15.299,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel10.webp" alt="Colar Duplo de Ouro e Pérolas" class="product-image">
+          <strong class="product-title">Colar Duplo de Ouro e Pérolas</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 23.499,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel8.webp" alt="Pulseira Corrente de Ouro" class="product-image">
+          <strong class="product-title">Pulseira Corrente de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 7.299,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel9.webp" alt="Colar Pingente de Ouro" class="product-image">
+          <strong class="product-title">Colar Pingente de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 10.499,00</span>
+        </div>
+        <div class="jew-product">
+          <img src="/assets/jewel11.webp" alt="Colar e Medalha de Ouro" class="product-image">
+          <strong class="product-title">Colar e Medalha de Ouro</strong>
+          <div class="product-price-container">
+            <button type="button" class="button-hover-background">Adicionar à bolsa</button>
+          </div>
+          <span class="product-price">R$ 14.999,00</span>
+        </div>
+      </div>
+      
+
+
+      </div>
+    </section>
+
     <article id="galeria" class="gallery">
-      <h1>Galeria</h1>
+      <h1 class="area-title">Galeria</h1>
 
       <div class="gallery-images">
         <div class="image-container">
@@ -63,7 +155,46 @@
       </div>
     </article>
 
+
+
   </main>
+  <section id="newsletter" class="newsletter-bg">
+    <div class="newsletter container">
+      <h1 class="area-title">newsletter</h1>
+      <p>cadastre seu email e receba nossas novidades</p>
+      <form class="form-email" action="">
+        <input class="newsletter-msg" type="email" placeholder="Seu e-mail aqui!" name="newsletter">
+        <button class="btn-mail">➔</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class='container footer-itens'>
+      <h1 class="area-title">Jewelry</h1>
+
+      <div class="dados">
+        <h2 class="area-title">Sobre Nós</h2>
+        <p>CNPJ: <span>12.345.678/0001-90</span></p>
+        <p>Razão Social: Jewelry LTDA</p>
+        <p>Telefone: <span>(11) 98765-4321</span></p>
+        <p>Email: contato@jewelry.com</p>
+        <p>Atendimento: Segunda a Sexta, das 8h às 18h</p>
+      </div>
+
+      <nav>
+        <h2 class="area-title">Menu</h2>
+        <ul class="nav-footer">
+          <li><a class="efect" href="#produtos">Produtos</a></li>
+          <li><a class="efect" href="#galeria">Galeria</a></li>
+          <li><a class="efect" href="#newsletter">newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container copy">
+      <p>Jewelry © Alguns direitos reservados</p>
+    </div>
+  </footer>
 
   <script src="./engine/script.js"></script>
 </body>
