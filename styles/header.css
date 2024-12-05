@@ -26,15 +26,18 @@
   z-index: 10; 
 }
 
+
 .header-menu h1 a{
   font-family: "Cinzel decorative";
   color: #fff;
 }
 
-.nav-menu {
+.nav-menu, .menu-itens {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
+
 
 .nav-menu a {
   font-family: 'Raleway';
@@ -141,5 +144,9 @@
 @media (max-width: 900px){
   .header h2{
     font-size: 2rem;
+  }
+
+  .icon{
+    width: 40px;
   }
 }
