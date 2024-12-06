@@ -23,6 +23,8 @@
 
 
 @media (max-width: 800px){
+  
   .gallery-images {
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 100px;
 }}

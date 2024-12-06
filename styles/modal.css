@@ -1,21 +1,21 @@
-/* Estilo do modal de carrinho (bag) */
+
 .bag {
   position: fixed;
   top: 0;
-  right: -500px; /* Inicia fora da tela à direita */
+  right: -500px;
   bottom: 0;
   width: 500px;
   background-color: white;
   box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: right 0.3s ease; /* Transição suave para o lado direito */
+  transition: right 0.3s ease; 
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   z-index: 1001;
 }
 
-/* Estilo do overlay escuro */
+
 #overlay {
   position: fixed;
   top: 0;

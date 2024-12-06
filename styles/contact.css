@@ -2,7 +2,7 @@
   background-image: url("../assets/neck.webp");
   background-size: cover;
   background-position: center;
-  height: 70vh; /* Preenche toda a altura da tela */
+  height: 70vh; 
   width: 100%;
   position: relative;
 }
