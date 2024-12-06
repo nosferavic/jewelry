@@ -6,22 +6,36 @@ menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
 
-
 // Adicionar produto ao carrinho
-const addToCartButtons = document.getElementsByClassName("button-hover-background");
+const addToCartButtons = document.getElementsByClassName(
+  "button-hover-background"
+);
 for (let i = 0; i < addToCartButtons.length; i++) {
   addToCartButtons[i].addEventListener("click", addProductToCart);
 }
 
+const purchaseButton = document.querySelector(".finalButton");
+
+purchaseButton.addEventListener("click", makePurchase);
+
+function makePurchase() {
+  const totalElement = document.querySelector(".product-price-final");
+  const totalAmount = totalElement.innerText.replace("R$", "").trim();
+
+  if (totalAmount === "" || parseFloat(totalAmount.replace(",", ".")) === 0) {
+    alert("Seu carrinho está vazio!");
+  } else {
+    alert(`Obrigado por sua compra!
+Valor do pedido: R$${totalAmount}
+Volte sempre!`);
+  }
+}
 
 function checkIfInputIsNull(event) {
- 
   const quantityValue = parseInt(event.target.value, 10);
-  
-  
+
   const parentElement = event.target.closest(".bag-item");
 
-  
   if (quantityValue === 0) {
     parentElement.remove();
   }
@@ -39,18 +53,24 @@ document.addEventListener("change", (event) => {
 function addProductToCart(event) {
   const button = event.target;
   const productsInfos = button.parentElement.parentElement;
-  const productImage = productsInfos.getElementsByClassName("product-image")[0].src;
-  const productTitle = productsInfos.getElementsByClassName("product-title")[0].innerText;
-  const productPrice = productsInfos.getElementsByClassName("product-price")[0].innerText;
+  const productImage =
+    productsInfos.getElementsByClassName("product-image")[0].src;
+  const productTitle =
+    productsInfos.getElementsByClassName("product-title")[0].innerText;
+  const productPrice =
+    productsInfos.getElementsByClassName("product-price")[0].innerText;
 
-const productCartsName = document.getElementsByClassName('cart-product-title')
-for(let i = 0; i < productCartsName.length; i++){
-  if(productCartsName[i].innerText === productTitle){
-    productCartsName[i].parentElement.parentElement.getElementsByClassName('quantity')[0].value++
-    updateTotal();
-    return
+  const productCartsName =
+    document.getElementsByClassName("cart-product-title");
+  for (let i = 0; i < productCartsName.length; i++) {
+    if (productCartsName[i].innerText === productTitle) {
+      productCartsName[i].parentElement.parentElement.getElementsByClassName(
+        "quantity"
+      )[0].value++;
+      updateTotal();
+      return;
+    }
   }
-}
 
   let newCartProduct = document.createElement("div");
   newCartProduct.classList.add("bag-item");
@@ -71,8 +91,12 @@ for(let i = 0; i < productCartsName.length; i++){
 
   updateTotal();
 
-  newCartProduct.getElementsByClassName('quantity')[0].addEventListener('change', updateTotal)
-  newCartProduct.getElementsByClassName('removeButton')[0].addEventListener('click', removeItem)
+  newCartProduct
+    .getElementsByClassName("quantity")[0]
+    .addEventListener("change", updateTotal);
+  newCartProduct
+    .getElementsByClassName("removeButton")[0]
+    .addEventListener("click", removeItem);
 }
 
 // Função para remover item do carrinho
@@ -120,12 +144,18 @@ function updateTotal() {
     const productPrice = parseFloat(
       bagItens[i]
         .getElementsByClassName("product-price")[0]
-        .innerText.replace("R$", "").replace(".", "").replace(",", ".")
+        .innerText.replace("R$", "")
+        .replace(".", "")
+        .replace(",", ".")
     );
-    const productQtde = parseInt(bagItens[i].getElementsByClassName("quantity")[0].value);
+    const productQtde = parseInt(
+      bagItens[i].getElementsByClassName("quantity")[0].value
+    );
 
     totalAmount += productPrice * productQtde;
   }
 
-  document.querySelector(".product-price-final").innerText = `R$ ${totalAmount.toFixed(2)}`;
+  document.querySelector(
+    ".product-price-final"
+  ).innerText = `R$ ${totalAmount.toFixed(2)}`;
 }
