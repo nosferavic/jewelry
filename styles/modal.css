@@ -2,16 +2,15 @@
 .bag {
   position: fixed;
   top: 0;
-  right: -400px; /* Inicia fora da tela à direita */
+  right: -500px; /* Inicia fora da tela à direita */
   bottom: 0;
-  width: 400px;
+  width: 500px;
   background-color: white;
   box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: right 0.3s ease; /* Transição suave para o lado direito */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   overflow-y: auto;
   z-index: 1001;
 }
@@ -82,9 +81,11 @@
 }
 
 .bag-flex {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
   margin-bottom: 10px;
 }
 
