@@ -35,7 +35,7 @@
   background-color: #fff;
   color: #111;
   border: 2px solid #000;
-  padding: 10px 20px;
+  padding: 10px 60px;
   font-weight: bold;
   font-family: "Raleway", sans-serif;
   transition: 0.2s;
@@ -44,11 +44,6 @@
 .button-hover-background:hover {
   background: #222;
   color: #eee;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-family: "Raleway", sans-serif;
-  transition: 0.2s;
-  cursor: pointer;
 }
 
 
@@ -60,7 +55,10 @@
 
 
 @media (max-width: 620px){
-
+  .button-hover-background{
+    padding: 20px;
+    width: 90vw;
+  }
   .product-image {
     width: 90%;
   } 
