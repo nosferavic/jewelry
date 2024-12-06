@@ -7,17 +7,33 @@ menuToggle.addEventListener("click", () => {
 });
 
 
-// Quantidade
-const quantityInputs = document.getElementsByClassName("quantity");
-for (let i = 0; i < quantityInputs.length; i++) {
-  quantityInputs[i].addEventListener("change", updateTotal);
-}
-
 // Adicionar produto ao carrinho
 const addToCartButtons = document.getElementsByClassName("button-hover-background");
 for (let i = 0; i < addToCartButtons.length; i++) {
   addToCartButtons[i].addEventListener("click", addProductToCart);
 }
+
+
+function checkIfInputIsNull(event) {
+ 
+  const quantityValue = parseInt(event.target.value, 10);
+  
+  
+  const parentElement = event.target.closest(".bag-item");
+
+  
+  if (quantityValue === 0) {
+    parentElement.remove();
+  }
+
+  updateTotal();
+}
+
+document.addEventListener("change", (event) => {
+  if (event.target.classList.contains("quantity")) {
+    checkIfInputIsNull(event);
+  }
+});
 
 // Função para adicionar produto ao carrinho
 function addProductToCart(event) {
@@ -27,12 +43,21 @@ function addProductToCart(event) {
   const productTitle = productsInfos.getElementsByClassName("product-title")[0].innerText;
   const productPrice = productsInfos.getElementsByClassName("product-price")[0].innerText;
 
+const productCartsName = document.getElementsByClassName('cart-product-title')
+for(let i = 0; i < productCartsName.length; i++){
+  if(productCartsName[i].innerText === productTitle){
+    productCartsName[i].parentElement.parentElement.getElementsByClassName('quantity')[0].value++
+    updateTotal();
+    return
+  }
+}
+
   let newCartProduct = document.createElement("div");
   newCartProduct.classList.add("bag-item");
   newCartProduct.innerHTML = `
     <div class="bag-flex">
       <img class="product-image" src="${productImage}" alt="Imagem em miniatura de ${productTitle}">
-      <p class="product-title">${productTitle}</p>
+      <p class="product-title cart-product-title">${productTitle}</p>
       <p class="product-price">${productPrice}</p>
       <input type="number" class="quantity" name="qtde" id="qtde" value="1" min="0" max="99" oninput="validateMax(this)">
       <button class="removeButton">x</button>
@@ -45,6 +70,9 @@ function addProductToCart(event) {
   removeButton.addEventListener("click", removeItem);
 
   updateTotal();
+
+  newCartProduct.getElementsByClassName('quantity')[0].addEventListener('change', updateTotal)
+  newCartProduct.getElementsByClassName('removeButton')[0].addEventListener('click', removeItem)
 }
 
 // Função para remover item do carrinho
