@@ -1,13 +1,155 @@
-.jewels-modal{
+/* Estilo do modal de carrinho (bag) */
+.bag {
   position: fixed;
-  left: 0;
   top: 0;
+  right: -400px; /* Inicia fora da tela à direita */
   bottom: 0;
-  right: 0;
-  background-color: #fff;
-  display: none;
-  transition: all ease .5s;
-  justify-content: center;
-  align-items: center;
+  width: 400px;
+  background-color: white;
+  box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease; /* Transição suave para o lado direito */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-y: auto;
+  z-index: 1001;
+}
+
+/* Estilo do overlay escuro */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.bag.open {
+  right: 0;
+}
+
+#overlay.show {
+  display: block;
+}
+
+.bag-title {
+  font-family: "Cinzel decorative";
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+}
+
+.bag-itens {
+  flex-grow: 1;
+}
+
+.valor-final {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bag-itens > p.product-title {
+  margin: 0;
+  padding: 0;
+  text-align: start;
+}
+
+.removeButton {
+  outline: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid #111;
+  background-color: #fff;
+  padding: 4px 10px 6px 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.bag-itens input {
+  width: 50px;
+  border: 1px solid #111;
+  padding: 7px;
+}
+
+.bag-itens input:hover {
+  border-color: #111;
+}
+
+.bag-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bag .product-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bag .product-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #333;
+}
+
+.finalButton {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  padding: 10px;
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #111;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.finalButton:hover,
+.removeButton:hover {
+  color: #fff;
+  background-color: #222;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .bag {
+    width: 100%;
+    right: -100%;
+  }
+
+  .bag.open {
+    right: 0;
+  }
+
+  .finalButton {
+    padding: 12px;
+  }
 }
