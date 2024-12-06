@@ -5,6 +5,7 @@
   height: 70vh; /* Preenche toda a altura da tela */
   width: 100%;
   position: relative;
+  z-index: 2;
 }
 
 .header {
@@ -23,9 +24,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10; 
+  z-index: 100; 
 }
 
+.black-bg{
+  background-color: #000;
+}
 
 .header-menu h1 a{
   font-family: "Cinzel decorative";
@@ -37,7 +41,6 @@
   gap: 2rem;
   align-items: center;
 }
-
 
 .nav-menu a {
   font-family: 'Raleway';
@@ -95,6 +98,10 @@
   cursor: pointer;
 }
 
+.no-scroll {
+  overflow: hidden; /* Impede a rolagem */
+}
+
 @media (max-width: 900px){
   .header h2{
     font-size: 2.5rem;
@@ -105,15 +112,21 @@
   }
 
   .nav-menu {
-    display: none; 
+    display: flex; 
     flex-direction: column;
     position: absolute;
-    top: 100px;
+    top: 94px;
     left: 0;
-    background-color: #fff;
+    height: 100vh;
+    background-color: #000;
     width: 100%;
     padding: 20px;
+    opacity: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none; 
+    z-index: 5;
   }
 
   .nav-menu li {
@@ -125,7 +138,9 @@
   }
 
   .nav-menu.show {
-    display: flex; 
+    transform: translateY(0); 
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-menu li:not(:last-child) {

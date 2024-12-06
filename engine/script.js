@@ -1,12 +1,33 @@
-// Menu Hamburguer
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
+const bgHeader = document.querySelector(".header-menu");
+const body = document.querySelector("body");
+
 
 menuToggle.addEventListener("click", () => {
+
   navMenu.classList.toggle("show");
+
+
+  if (navMenu.classList.contains("show")) {
+    body.classList.add("no-scroll"); 
+    bgHeader.classList.add("black-bg"); 
+  } else {
+    body.classList.remove("no-scroll");
+    bgHeader.classList.remove("black-bg");
+  }
 });
 
-// Adicionar produto ao carrinho
+
+navMenu.querySelectorAll("a").forEach((i) => {
+  i.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    body.classList.remove("no-scroll"); 
+    bgHeader.classList.remove("black-bg");
+  });
+});
+
+
 const addToCartButtons = document.getElementsByClassName(
   "button-hover-background"
 );
@@ -97,6 +118,9 @@ function addProductToCart(event) {
   newCartProduct
     .getElementsByClassName("removeButton")[0]
     .addEventListener("click", removeItem);
+
+  bag.classList.add("open");
+  overlay.classList.add("show");
 }
 
 // Função para remover item do carrinho
