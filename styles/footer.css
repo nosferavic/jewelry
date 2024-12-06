@@ -45,6 +45,10 @@
 }
 
 @media (max-width: 900px){
+  .footer .area-title{
+    padding-bottom: 0px;
+  }
+
   .footer-itens{
     flex-direction: column;
   }
