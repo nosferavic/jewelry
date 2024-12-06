@@ -159,6 +159,7 @@
 @media (max-width: 900px){
   .header h2{
     font-size: 2rem;
+    padding-top: 200;
   }
 
   .icon{

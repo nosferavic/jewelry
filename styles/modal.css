@@ -22,7 +22,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  
   display: none;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -86,7 +85,6 @@
   grid-template-columns: auto auto auto auto auto;
   width: auto;
   align-items: center;
-  gap: 30px;
   margin-bottom: 10px;
 }
 
@@ -149,6 +147,11 @@
 
   .bag.open {
     right: 0;
+  }
+
+  .bag-itens input{
+    padding: 4;
+    width: 40px;
   }
 
   .finalButton {

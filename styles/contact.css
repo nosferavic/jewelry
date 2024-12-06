@@ -8,7 +8,7 @@
 }
 
 .newsletter{
-  padding-top: 150px;
+  padding-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,6 +68,10 @@
   .form-email{
     flex-direction: column;
   }
+
+.newsletter{
+padding-top: 100px;
+}
 
   .btn-mail{
     width: 100%;
